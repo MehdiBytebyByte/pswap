@@ -5,20 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 15:58:03 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/01 19:41:00 by mboughra         ###   ########.fr       */
+/*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
+/*   Updated: 2024/05/18 19:18:47 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 typedef struct Node
 {
     int data;
-    struct Node* next;
-}Node;
+    struct Node *prev;
+    struct Node *next;
+} Node;
 
-typedef struct Stack
+typedef struct
 {
-    Node* top;
-}Stack;
+    Node *top;
+} Stack;
+
+int		ft_ofchercker(long max, long re, int s);
+int		ft_atoi(char *str);
+int		ft_subscounter(char *str, char c);
+char	*coppier(char *s, int y, int x);
+char	**ft_split(char *s, char c);
+void	freemem(char **splited, int r);
+char	**allocater(char *str, char c, int nsubs, char **splited);
+
+
+#endif
