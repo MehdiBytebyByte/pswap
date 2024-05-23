@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/18 21:08:14 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/05/23 02:12:49 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,33 +87,56 @@ Stack function(Stack *Alpha, char **argv)
 	}
 	return (*Alpha);
 }
+int numcheck(char **argv)
+{
+	int i;
+	int j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] >= '0' && argv[i][j] <= '9')
+				|| argv[i][j] == ' ' || argv[i][j] == '-' || argv[i][j] == '+')
+				j++;
+			else
+				return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int check(char **argv)
+{
+	if (!numcheck(argv))
+		return (-1);
+	return (0);
+};
 
 int main(int argc, char **argv)
 {
-	Stack stack;
-	(void)argc;
-	
-	stack = function(&stack, argv);
-	while (peek(&stack))
+	int		i;
+	char	**temp;
+	Node	*A;
+	i = 1;
+	if(check(argv) == -1)
+		exit(1);
+	while (argv[i])
 	{
-		printf("%d\n",peek(&stack));
-		pop(&stack);
+		temp = ft_split(argv[i], ' ');
+		int j;
+
+		j = 0;
+		while (temp[j])
+		{
+			push(&A,atoi(temp[j]));
+			printf("%d\n",atoi(temp[j]));
+			j++;
+		}
+		i++;
 	}
-
+	
 };
-
-
-
-	///
-
-	// 	while (*argv)
-	// {
-	// 	str = ft_split(*argv,' ');
-	// 	while (*str)
-	// 	{
-	// 		temp = ft_atoi(*str);
-	// 		push(&stack, temp);
-	// 		str++;
-	// 	}
-	// 	argv++;
-	// }

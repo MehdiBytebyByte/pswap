@@ -1,5 +1,5 @@
 CC =  cc
-CFLAGS = -Wall -Werror -Wextra -g
+# CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 SRCS = Pushswap.c Pushtools.c\
 
@@ -9,7 +9,8 @@ all: $(NAME)
 do:	$(NAME)
 	rm -f $(OBJS)
 %.o: %.c $(HEADER)
-	$(CC) -Wall -Wextra -Werror -c $< -o $@
+	$(CC) -c $< -o $@
+# hadi kant fo9 had ster -Wall -Wextra -Werror 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 clean:
