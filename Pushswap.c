@@ -6,87 +6,17 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/31 20:47:21 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/01 00:37:25 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int numcheck(char **argv)
+
+void	ft_error(int num,t_stack *stack)
 {
-	int i;
-	int j;
-
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if ((argv[i][j] >= '0' && argv[i][j] <= '9')
-				|| argv[i][j] == ' ' || argv[i][j] == '-' || argv[i][j] == '+')
-				j++;
-			else
-				return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-int signcheck(char **argv)
-{
-	int i;
-	int j;
-
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if ((argv[i][j] == '+' || argv[i][j] == '-' ))
-				if ((argv[i][j - 1] >= '0' && argv[i][j - 1] <= '9') || argv[i][j - 1] == '+' || argv[i][j - 1] == '-')
-				{
-					// printf("this is j that failled --> %c \n",argv[i][j]);
-					return (0);
-				}
-			if ((argv[i][j] == '+' || argv[i][j] == '-' ))
-			{
-				if (argv[i][j + 1] == ' ')
-					return (0);	
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	onlysigncheck(char **argv)
-{
-	int i;
-	
-	i = 1;
-	while (argv[i])
-	{
-		if (ft_strlen(argv[i]) == 1 && (argv[i][0] == '+' || argv[i][0] == '-'))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);	
-}
-
-int check(char **argv)
-{
-	int i;
-	int count;
-	
-	if (!numcheck(argv) || !signcheck(argv)|| !onlysigncheck(argv))
-		return (-1);
-	return (0);
+		ft_putstrerror("ERROR\n");
+		exit(1);
 };
 
 t_stack	*stackbuild(char **argv, t_stack *stack)
@@ -120,33 +50,7 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 void	func(void)
 {
 	system("leaks push_swap");
-}
-
-
-void check_for_duplicates(t_stack	*head)
-{
-    t_stack	*current;
-	t_stack	*runner; 
-	
-	current = head;
-    while (current != NULL)
-	{
-       runner = current->next;
-        while (runner != NULL)
-		{
-            if (current->value == runner->value)
-				ft_error(3, head);
-            runner = runner->next;
-        }
-        current = current->next;
-    }
-}
-
-void	ft_error(int num,t_stack *stack)
-{
-		ft_putstrerror("ERROR\n");
-		exit(1);
-}
+};
 
 int main(int argc, char  *argv[])
 {
@@ -162,15 +66,13 @@ int main(int argc, char  *argv[])
 	
 
 	//display the stack if correct
-	
 	t_stack *temp;
 	temp = stack;
 	while (temp->next)
 	{
-		printf("%d  ",temp->value);
+		printf("|%d|\n",temp->value);
 		temp = temp->next;
 	}
-		
 	
 	// atexit(func);
 	return 0;

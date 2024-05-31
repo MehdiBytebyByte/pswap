@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/31 20:40:35 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/01 00:28:14 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,11 @@ void	push(t_stack **stack, t_stack *new_element);
 void	ft_putstrerror(char *s);
 void	ft_putstr(char *s);
 void	ft_error(int num,t_stack *stack);
+int		check(char **argv);
+int		onlysigncheck(char **argv);
+int		signcheck(char **argv);
+int		numcheck(char **argv);
+void	check_for_duplicates(t_stack	*head);
+int		emptystringcheck(char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/31 00:19:04 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/01 00:38:56 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_stack	*new_element(int value)
 	t_stack	*new;
 
 	new = (t_stack *)malloc(sizeof(t_stack));
-	// if (!new)
-	// 	return ;
+	if (!new)
+		ft_error(5,new);
 	new->value = value;
 	new->index = -1;
 	new->pos = -1;
