@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/01 00:38:56 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:47:25 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,42 @@ void	push(t_stack **stack, t_stack *new_element)
 		return ;
 	new_element->next = *stack;
 	*stack = new_element;
+};
+
+int	listcount(t_stack *stack)
+{
+	int i;
+
+	i = 0;
+	while (stack)
+	{
+		i++;
+		stack = stack->next;
+	}
+	return (i);
+};
+
+void free_stack(t_stack *stack)
+{
+    t_stack *temp;
+    while (stack)
+    {
+        temp = stack;
+        stack = stack->next;
+        free(temp);
+    }
+};
+
+t_stack buildb(t_stack *stacka,t_stack *stackb)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = listcount(stacka);
+	while (i > listcount)
+	{
+		
+	}
+	
 }

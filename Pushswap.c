@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/01 00:37:25 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:44:00 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 			push(&stack, new);
 			j++;
 		}
-		while (j != 0)
-		{
-			free(temp[j--]);
-		}
+		while (j >= 0)
+			free(temp[--j]);
 		free(temp);
 		i++;
 	}
@@ -56,6 +54,7 @@ int main(int argc, char  *argv[])
 {
 	t_stack *stack;
 	
+	stack = NULL;
 	if (argc < 2)
 		ft_error(0, stack);
 	if (check(argv) == -1)
@@ -63,18 +62,15 @@ int main(int argc, char  *argv[])
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
-	
-
-	//display the stack if correct
 	t_stack *temp;
 	temp = stack;
-	while (temp->next)
+	while (temp)
 	{
 		printf("|%d|\n",temp->value);
 		temp = temp->next;
 	}
-	
-	// atexit(func);
+	free_stack(stack);
+	atexit(func);
 	return 0;
 }
 
