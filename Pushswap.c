@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/01 17:44:00 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/02 03:18:39 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,19 @@ int main(int argc, char  *argv[])
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
 	t_stack *temp;
+	
+	stack = swap(&stack);
 	temp = stack;
-	while (temp)
+	while (temp->next)
 	{
 		printf("|%d|\n",temp->value);
 		temp = temp->next;
 	}
+
+	
+
 	free_stack(stack);
-	atexit(func);
+	// atexit(func);
 	return 0;
 }
 
