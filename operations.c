@@ -6,26 +6,40 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 00:22:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/04 22:12:19 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/05 00:23:26 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *swap(t_stack **stack)
+void sa(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
 	
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return *stack;
+		return ;
 		
 	first = *stack;
 	second = first->next;
 	first->next = second->next;
     second->next = first;
     *stack = second;
-	return (*stack);
+};
+
+void sb(t_stack **stack)
+{
+	t_stack	*first;
+	t_stack	*second;
+	
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return ;
+		
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+    second->next = first;
+    *stack = second;
 };
 
 t_stack *rotate(t_stack **stack)

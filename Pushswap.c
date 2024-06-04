@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/04 22:24:40 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/05 00:30:25 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	readstack(t_stack *stack)
 {
 	while (stack)
 	{
-		printf("%d\n",stack->value);
+		printf("%d  ",stack->value);
 		stack = stack->next;
 	}
 };
@@ -71,12 +71,6 @@ int main(int argc, char  *argv[])
 		ft_error(1, stack);
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
-	readstack(stack);
-	stack = rotate(&stack);
-	printf("\nRotate\n");
-	readstack(stack);
-	stack = swap(&stack);
-	printf("\nSwap\n");
 	readstack(stack);
 	free_stack(stack);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/04 20:06:04 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/05 00:23:13 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	check_for_duplicates(t_stack	*head);
 int		emptystringcheck(char **argv);
 int		listcount(t_stack *stack);
 void 	free_stack(t_stack *stack);
-t_stack	*swap(t_stack **stack);
+void	sa(t_stack **stack);
+void	sb(t_stack **stack);
 t_stack *rotate(t_stack **stack);
 
 #endif
