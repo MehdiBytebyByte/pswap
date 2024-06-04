@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/04 22:22:20 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/04 22:24:40 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ void	func(void)
 	system("leaks push_swap");
 };
 
+void	readstack(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d\n",stack->value);
+		stack = stack->next;
+	}
+};
+
 int main(int argc, char  *argv[])
 {
 	// atexit(func);
@@ -62,40 +71,16 @@ int main(int argc, char  *argv[])
 		ft_error(1, stack);
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
-	t_stack *temp;
-	
-	temp = stack;
-	while (temp)
-	{
-		printf("---> %d\n", temp->value);
-		temp = temp->next;
-	}
+	readstack(stack);
 	stack = rotate(&stack);
 	printf("\nRotate\n");
-	temp = stack;
-	while (temp)
-	{
-		printf("---> %d\n", temp->value);
-		temp = temp->next;
-	};
+	readstack(stack);
 	stack = swap(&stack);
 	printf("\nSwap\n");
-	temp = stack;
-	while (temp)
-	{
-		printf("---> %d\n", temp->value);
-		temp = temp->next;
-	};
-	
-
-
-	
+	readstack(stack);
 	free_stack(stack);
-	return 0;
+	return (0);
 }
-
-
-
 
 
 // to do list
