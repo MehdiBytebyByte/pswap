@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/02 03:18:39 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/04 22:18:49 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	func(void)
 
 int main(int argc, char  *argv[])
 {
+	// atexit(func);
 	t_stack *stack;
 	
 	stack = NULL;
@@ -59,23 +60,37 @@ int main(int argc, char  *argv[])
 		ft_error(0, stack);
 	if (check(argv) == -1)
 		ft_error(1, stack);
-	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
 	t_stack *temp;
 	
-	stack = swap(&stack);
 	temp = stack;
-	while (temp->next)
+	while (temp)
 	{
-		printf("|%d|\n",temp->value);
+		printf("---> %d\n", temp->value);
 		temp = temp->next;
 	}
-
+	stack = rotate(&stack);
+	printf("\nRotate\n");
+	temp = stack;
+	while (temp)
+	{
+		printf("---> %d\n", temp->value);
+		temp = temp->next;
+	};
+	stack = swap(&stack);
+	printf("\nSwap\n");
+	temp = stack;
+	while (temp)
+	{
+		printf("---> %d\n", temp->value);
+		temp = temp->next;
+	};
 	
 
+
+	
 	free_stack(stack);
-	// atexit(func);
 	return 0;
 }
 

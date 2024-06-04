@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 00:02:11 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/01 00:30:31 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/04 22:02:51 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ int check(char **argv)
 	int i;
 	int count;
 	
-	if (!numcheck(argv) || !signcheck(argv) || !onlysigncheck(argv) || !emptystringcheck(argv))
+	if (!numcheck(argv) || !signcheck(argv) || !onlysigncheck(argv) 
+	|| !emptystringcheck(argv))
 		return (-1);
 	return (0);
 };
