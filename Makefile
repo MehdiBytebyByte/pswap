@@ -12,7 +12,8 @@ do:	$(NAME)
 	$(CC) -c $< -o $@
 # hadi kant fo9 had ster -Wall -Wextra -Werror 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC)  $(CFLAGS) $(OBJS) -o $(NAME)
+# -fsanitize=address
 clean:
 	rm -f $(OBJS)
 fclean: clean

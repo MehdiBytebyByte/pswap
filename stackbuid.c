@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/05 00:40:44 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/05 02:22:43 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,6 @@ t_stack	*new_element(int value)
 	return (new);
 }
 
-// void	push(t_stack **stack, t_stack *new_element)
-// {
-// 	if (!new_element)
-// 		return ;
-// 	new_element->next = *stack;
-// 	*stack = new_element;
-// };
-
 void	push(t_stack **stack, t_stack *new_element)
 {
     t_stack *current;
@@ -53,6 +45,13 @@ void	push(t_stack **stack, t_stack *new_element)
         current->next = new_element;
     }
 };
+// void	push(t_stack **stack, t_stack *new_element)
+// {
+// 	if (!new_element)
+// 		return ;
+// 	new_element->next = *stack;
+// 	*stack = new_element;
+// };
 
 
 int	listcount(t_stack *stack)
