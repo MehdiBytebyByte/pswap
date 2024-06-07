@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/05 02:32:07 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:48:18 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 {
 	int	i;
 	int	j;
-	int	x;
 	char **temp;
 	t_stack *new;
 	
@@ -71,13 +70,20 @@ int main(int argc, char  *argv[])
 	if (check(argv) == -1)
 		ft_error(1, stack);
 	stack = stackbuild(argv, stack);
-	// exit(0);
 	check_for_duplicates(stack);
 	printf("\n\n");
 	readstack(stack);
-	// sa(&stack);
-	// readstack(stack);
+	printf("\n\n");
+	rotate(&stack);
+	readstack(stack);
+	t_stack *b;
+	
+	push(&b,new_element(25));
+	pushop(&stack,b);
+	printf("\n\n");
+	readstack(stack);
 	free_stack(stack);
+	// free_stack(b);
 	return (0);
 }
 
