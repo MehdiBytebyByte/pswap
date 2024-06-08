@@ -6,11 +6,11 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 00:02:11 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/05 00:47:25 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 04:43:54 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 
 void check_for_duplicates(t_stack	*head)
