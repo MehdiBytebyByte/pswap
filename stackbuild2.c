@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   stackbuild2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 15:18:54 by mboughra          #+#    #+#             */
-/*   Updated: 2023/11/17 14:59:18 by mboughra         ###   ########.fr       */
+/*   Created: 2024/06/08 03:20:19 by mboughra          #+#    #+#             */
+/*   Updated: 2024/06/08 04:32:48 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s1)
+
+t_stack	*emptynewelement(void)
 {
-	size_t	i;
-	size_t	lenofs;
-	char	*s2;	
+	t_stack	*new;
 
-	i = 0;
-	lenofs = ft_strlen(s1)+1;
-	s2 = malloc(lenofs * sizeof(char));
-	if (s2 == NULL)
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		ft_error(5,new);
+	new->index = -1;
+	new->pos = -1;
+	new->value = 96;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
+	new->next = NULL;
+	return (new);
 }

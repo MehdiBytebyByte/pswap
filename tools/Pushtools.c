@@ -6,11 +6,11 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:57:44 by mboughra          #+#    #+#             */
-/*   Updated: 2024/05/27 17:04:24 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 04:26:50 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_ofchercker(long max, long re, int s)
 {

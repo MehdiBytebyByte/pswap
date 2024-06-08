@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/07 16:42:57 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 04:35:26 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,19 @@ void free_stack(t_stack *stack)
     }
 };
 
-// t_stack buildb(t_stack *stacka,t_stack *stackb)
-// {
-// 	int i;
-// 	int count;
+t_stack *buildb(t_stack *stacka,t_stack *stackb)
+{
+	int i;
+	int count;
+	t_stack *temp;
 
-// 	i = 0;
-// 	count = listcount(stacka);
-// 	while (i > listcount)
-// 	{
-		
-// 	}
-	
-// }
+	i = 0;
+	count = listcount(stacka);
+	while (i < listcount(stacka))
+	{
+		temp = emptynewelement();
+		pushfront(&stackb, temp);
+		i++;
+	}
+	return(stackb);
+}

@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/07 16:43:11 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 04:33:32 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ void	s(t_stack **stack);
 void 	rotate(t_stack **stack);
 void	pushop(t_stack **stack,t_stack *stackb);
 void	pushfront(t_stack **stack, t_stack *new_element);
+t_stack *buildb(t_stack *stacka,t_stack *stackb);
+t_stack	*emptynewelement(void);
 
 #endif

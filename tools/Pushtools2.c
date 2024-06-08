@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   Pushtools2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 13:44:54 by mboughra          #+#    #+#             */
-/*   Updated: 2023/12/05 14:30:20 by mboughra         ###   ########.fr       */
+/*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
+/*   Updated: 2024/06/08 04:26:45 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
+void	ft_putstr(char *s)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	if (!haystack && len == 0 && needle != NULL)
-		return (NULL);
-	if (needle[i] == '\0')
-		return ((char *)haystack);
-	while (haystack[i])
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && (i + j) < len)
-		{
-			if (needle[j + 1] == '\0')
-				return ((char *)(haystack + i));
-			j++;
-		}
+		write (1, &s[i], 1);
 		i++;
 	}
-	return (NULL);
-}
+};
+
+void	ft_putstrerror(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write (2, &s[i], 1);
+		i++;
+	}
+};

@@ -1,7 +1,7 @@
 CC =  cc
 # CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
-SRCS = Pushswap.c Pushtools.c stackbuid.c Pushtools2.c checks.c operations.c
+SRCS = Pushswap.c tools/Pushtools.c tools/Pushtools2.c stackbuid.c stackbuild2.c checks.c operations.c
 
 OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h
