@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 00:22:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:46:16 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 04:49:34 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void s(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
-	
-
 	
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
