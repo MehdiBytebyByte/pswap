@@ -4,7 +4,8 @@ NAME = push_swap
 SRCS = Pushswap.c \
 tools/Pushtools.c tools/Pushtools2.c tools/split.c \
 stackbuild/stackbuild.c stackbuild/stackbuild2.c \
-checks/checks.c operations/operations.c
+checks/checks.c operations/pushandswap.c operations/rotate.c \
+operations/reverserotate.c
 
 OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h

@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 22:07:48 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 00:16:36 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int main(int argc, char  *argv[])
 	check_for_duplicates(stack);
 	readstack(stack);
 	printf("\n");
-	// reverserotate(&stack);
-	rotate(&stack);
+	// rra(&stack);
+	ra(&stack);
 	readstack(stack);
 	
 	// atexit(func);
