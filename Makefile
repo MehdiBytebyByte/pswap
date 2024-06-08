@@ -2,7 +2,7 @@ CC =  cc
 # CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 SRCS = Pushswap.c \
-tools/Pushtools.c tools/Pushtools2.c \
+tools/Pushtools.c tools/Pushtools2.c tools/split.c \
 stackbuild/stackbuild.c stackbuild/stackbuild2.c \
 checks/checks.c operations/operations.c
 
