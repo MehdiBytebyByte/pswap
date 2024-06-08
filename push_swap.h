@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:33:32 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:46:20 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	**ft_split(char *s, char c);
 void	freemem(char **splited, int r);
 char	**allocater(char *str, char c, int nsubs, char **splited);
 t_stack *new_element(int value);
-void	push(t_stack **stack, t_stack *new_element);
 void	ft_putstrerror(char *s);
 void	ft_putstr(char *s);
 void	ft_error(int num,t_stack *stack);
@@ -54,6 +53,7 @@ void 	free_stack(t_stack *stack);
 void	s(t_stack **stack);
 void 	rotate(t_stack **stack);
 void	pushop(t_stack **stack,t_stack *stackb);
+void	pushback(t_stack **stack, t_stack *new_element);
 void	pushfront(t_stack **stack, t_stack *new_element);
 t_stack *buildb(t_stack *stacka,t_stack *stackb);
 t_stack	*emptynewelement(void);

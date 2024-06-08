@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stackbuid.c                                        :+:      :+:    :+:   */
+/*   stackbuild.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:38:17 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:46:01 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*new_element(int value)
-{
-	t_stack	*new;
-
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if (!new)
-		ft_error(5,new);
-	new->value = value;
-	new->index = -1;
-	new->pos = -1;
-	new->target_pos = -1;
-	new->cost_a = -1;
-	new->cost_b = -1;
-	new->next = NULL;
-	return (new);
-}
-
-void	push(t_stack **stack, t_stack *new_element)
+void	pushback(t_stack **stack, t_stack *new_element)
 {
     t_stack *current;
 

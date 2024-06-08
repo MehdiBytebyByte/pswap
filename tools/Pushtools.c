@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:57:44 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:50:53 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:38:31 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ int	ft_atoi(char *str)
 	return (re * s);
 }
 
-
-
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
@@ -62,4 +60,32 @@ size_t	ft_strlen(char *s)
 		i++;
 	}
 	return (i);
+};
+
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+};
+
+void	ft_putstrerror(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write (2, &s[i], 1);
+		i++;
+	}
 };

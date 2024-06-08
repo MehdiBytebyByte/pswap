@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:37:34 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:46:29 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 		while (temp[j])
 		{
 			new = new_element(ft_atoi(temp[j]));
-			push(&stack, new);
+			pushback(&stack, new);
 			j++;
 		}
 	while (j >= 0)
