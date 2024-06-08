@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 19:46:20 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 22:58:19 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,14 @@ void	check_for_duplicates(t_stack	*head);
 int		emptystringcheck(char **argv);
 int		listcount(t_stack *stack);
 void 	free_stack(t_stack *stack);
-void	s(t_stack **stack);
-void 	rotate(t_stack **stack);
-void	pushop(t_stack **stack,t_stack *stackb);
+void	swap(t_stack **stack);
+void 	reverserotate(t_stack **stack);
+void	pushop(t_stack **stack,t_stack **stackb);
 void	pushback(t_stack **stack, t_stack *new_element);
 void	pushfront(t_stack **stack, t_stack *new_element);
 t_stack *buildb(t_stack *stacka,t_stack *stackb);
 t_stack	*emptynewelement(void);
+void	readstack(t_stack *stack);
+void rotate(t_stack **stack);
 
 #endif
