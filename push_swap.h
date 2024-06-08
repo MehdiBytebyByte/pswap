@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 00:27:28 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 00:35:21 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int		listcount(t_stack *stack);
 void 	free_stack(t_stack *stack);
 void	pushback(t_stack **stack, t_stack *new_element);
 void	pushfront(t_stack **stack, t_stack *new_element);
-t_stack *buildb(t_stack *stacka,t_stack *stackb);
 t_stack	*emptynewelement(void);
 void	readstack(t_stack *stack);
 //operations
