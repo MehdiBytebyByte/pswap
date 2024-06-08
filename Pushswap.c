@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 19:48:09 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:48:13 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 			pushback(&stack, new);
 			j++;
 		}
-		
 	while (j >= 0)
 			free(temp[j--]);
 		free(temp);
