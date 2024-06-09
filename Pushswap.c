@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:33:46 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 01:35:37 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main(int argc, char  *argv[])
 		ft_error(1, stacka);
 	stacka = stackbuild(argv, stacka);
 	check_for_duplicates(stacka);
+	pa(&stacka,&stackb);
+	readstack(stackb);
 	free_stack(stacka);
 	free_stack(stackb);
 	return (0);

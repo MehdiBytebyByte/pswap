@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 00:22:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 00:32:28 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 01:37:00 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,31 @@ void	ss(t_stack **stack, t_stack **stack2)
 	sb(stack2);
 };
 
-void pa(t_stack **stack, t_stack **stack2)
+void pa(t_stack **source, t_stack **destination)
 {
     t_stack *temp;
     t_stack *temp2;
 
-    if (!stack || !*stack)
+    if (!source || !*source)
         return;
 		
-	temp = *stack;
-    *stack = (*stack)->next;
-    temp->next = *stack2;
-    *stack2 = temp;
-}
-void pb(t_stack **stack, t_stack **stack2)
-{
-    t_stack *temp;
-    t_stack *temp2;
-
-    if (!stack || !*stack)
-        return;
-		
-	temp = *stack;
-    *stack = (*stack)->next;
-    temp->next = *stack2;
-    *stack2 = temp;
+	temp = *source;
+    *source = (*source)->next;
+    temp->next = *destination;
+    *destination = temp;
 };
+
+void pb(t_stack **source, t_stack **destination)
+{
+    t_stack *temp;
+    t_stack *temp2;
+
+    if (!source || !*source)
+        return;
+		
+	temp = *source;
+    *source = (*source)->next;
+    temp->next = *destination;
+    *destination = temp;
+};
+

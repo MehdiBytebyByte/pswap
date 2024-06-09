@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:21:32 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 01:37:26 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	pushback(t_stack **stack, t_stack *new_element);
 void	readstack(t_stack *stack);
 t_stack	*stackbuild(char **argv, t_stack *stack);
 //operations
-void	pa(t_stack **stack,t_stack **stack2);
-void	pb(t_stack **stack,t_stack **stack2);
+void	pa(t_stack **source,t_stack **destination);
+void	pb(t_stack **source,t_stack **destination);
 void	ss(t_stack **stack, t_stack **stack2);
 void	sa(t_stack **stack);
 void	sb(t_stack **stack);
