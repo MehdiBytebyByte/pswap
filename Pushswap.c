@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 00:16:36 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/09 01:31:11 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,6 @@ void	ft_error(int num,t_stack *stack)
 {
 		ft_putstrerror("ERROR\n");
 		exit(1);
-};
-
-t_stack	*stackbuild(char **argv, t_stack *stack)
-{
-	int	i;
-	int	j;
-	char **temp;
-	t_stack *new;
-	
-	i = 1;
-	while (argv[i])
-	{
-		temp = ft_split(argv[i],' ');
-		j = 0;
-		while (temp[j])
-		{
-			new = new_element(ft_atoi(temp[j]));
-			pushback(&stack, new);
-			j++;
-		}
-	while (j >= 0)
-			free(temp[j--]);
-		free(temp);
-		i++;
-	}
-	return (stack);
 };
 
 void	func(void)
@@ -57,6 +31,7 @@ void	readstack(t_stack *stack)
 		printf("%d  ",stack->value);
 		stack = stack->next;
 	}
+	printf("\n");
 };
 
 int main(int argc, char  *argv[])
@@ -71,15 +46,7 @@ int main(int argc, char  *argv[])
 		ft_error(1, stack);
 	stack = stackbuild(argv, stack);
 	check_for_duplicates(stack);
-	readstack(stack);
-	printf("\n");
-	// rra(&stack);
-	ra(&stack);
-	readstack(stack);
-	
-	// atexit(func);
-	// free_stack(stackb);
-	// free_stack(stack);
+
 	return (0);
 }
 
