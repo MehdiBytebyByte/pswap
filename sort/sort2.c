@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 03:50:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/10 04:33:24 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/10 04:38:49 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,7 @@ void	targetassigner(t_stack **stacka, t_stack **stackb)
 		b = b->next;
 	}
 };
+
+
+
+
