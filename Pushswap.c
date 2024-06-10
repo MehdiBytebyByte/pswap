@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:35:37 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/10 04:16:12 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ void	func(void)
 
 void	readstack(t_stack *stack)
 {
+	printf("Value\tindex\tposition\ttarget\n");
 	while (stack)
 	{
-		printf("%d  ",stack->value);
+		printf("%d    \t%d     \t%d\t        %d\n",stack->value, stack->index,stack->pos,stack->target_pos);
 		stack = stack->next;
 	}
 	printf("\n");
@@ -46,10 +47,10 @@ int main(int argc, char  *argv[])
 		ft_error(1, stacka);
 	stacka = stackbuild(argv, stacka);
 	check_for_duplicates(stacka);
-	pa(&stacka,&stackb);
-	readstack(stackb);
+	indexing(stacka);
+	start_sort(&stacka, &stackb);
+	// readstack(stacka);
 	free_stack(stacka);
-	free_stack(stackb);
 	return (0);
 }
 

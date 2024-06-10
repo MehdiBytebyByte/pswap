@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:37:26 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/10 04:27:37 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,14 @@ void	rb(t_stack **stack);
 void	rrr(t_stack **stack, t_stack **stack2);
 void 	rra(t_stack **stack);
 void 	rrb (t_stack **stack);
-
+//
+void	two_elements(t_stack **stack);
+void	three_elements(t_stack **stacka);
+void	start_sort(t_stack **stacka,t_stack **stackb);
+void	indexing(t_stack *stack);
+int		alreadysorted(t_stack *stack, int listcount);
+void	sortmore(t_stack **stacka, t_stack **stackb, int count);
+void	positionassigner(t_stack **stacka, t_stack **stackb);
+void	targetassigner(t_stack **stacka, t_stack **stackb);
+int		targetfinder(t_stack **stacka,int index);
 #endif
