@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/10 04:16:12 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/10 04:42:52 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ int main(int argc, char  *argv[])
 	// readstack(stacka);
 	free_stack(stacka);
 	return (0);
-}
-
+};
 
 // to do list
 // handle atoi(overflow and underflow)

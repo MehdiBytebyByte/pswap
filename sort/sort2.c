@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 03:50:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/10 04:38:49 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/10 05:23:58 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,24 @@ void	positionassigner(t_stack **stacka, t_stack **stackb)
 
 int	targetfinder(t_stack **stacka,int index)
 {
-	int  holder;
 	t_stack *a;
 	int	position;
+	int	smallest;
 
+	smallest = listcount(*stacka);
 	a = *stacka;
-	holder = listcount(*stacka);
 	while (a)
 	{
-		if (a->index > index && (a->index - index > holder))
+		if (a->index > index && ((a->index - index) < smallest))
 		{
-			holder = a->index - index;
+			smallest = a->index - index;
 			position = a->pos;
 		}
 		a = a->next;
+	}
+	if (smallest == listcount(*stacka))
+	{
+		return(-1);
 	}
 	return (position);
 };
@@ -66,7 +70,3 @@ void	targetassigner(t_stack **stacka, t_stack **stackb)
 		b = b->next;
 	}
 };
-
-
-
-
