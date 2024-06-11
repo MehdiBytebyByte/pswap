@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/10 04:42:52 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 00:39:30 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int main(int argc, char  *argv[])
 	check_for_duplicates(stacka);
 	indexing(stacka);
 	start_sort(&stacka, &stackb);
-	// readstack(stacka);
 	free_stack(stacka);
 	return (0);
 };

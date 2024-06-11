@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/10 04:27:37 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 01:36:29 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ int		alreadysorted(t_stack *stack, int listcount);
 void	sortmore(t_stack **stacka, t_stack **stackb, int count);
 void	positionassigner(t_stack **stacka, t_stack **stackb);
 void	targetassigner(t_stack **stacka, t_stack **stackb);
-int		targetfinder(t_stack **stacka,int index);
+int		targetfinder(t_stack **stacka,t_stack **stackb, int index);
+void	getminpos(t_stack **a,t_stack **b);
+void	firstpush(t_stack **a, t_stack **b, int count);
 #endif

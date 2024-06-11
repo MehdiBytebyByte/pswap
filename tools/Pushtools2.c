@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 22:33:44 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 01:17:25 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,31 @@ void	indexing(t_stack *stack)
 		}
 		i = i->next;
 	};
+};
+
+void	getminpos(t_stack **a,t_stack **b)
+{
+	t_stack *stka;
+	int holder;
+	int posholder;
+	t_stack *stkb;
+
+	stkb = *b;
+	stka = *a;
+	holder = listcount(*a) + listcount(*b) + 1;
+	while (stka)
+	{
+		if (holder > stka->index)
+			{
+				holder = stka->index;
+				posholder = stka->pos;
+			}
+		stka = stka->next;
+	};
+	while (stkb)
+	{
+		if (stkb->target_pos == -1)
+			stkb->target_pos = holder;
+		stkb = stkb->next;
+	}
 }

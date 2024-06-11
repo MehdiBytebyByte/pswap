@@ -5,7 +5,7 @@ SRCS = Pushswap.c \
 tools/Pushtools.c tools/Pushtools2.c tools/split.c \
 stackbuild/stackbuild.c stackbuild/stackbuild2.c \
 checks/checks.c operations/pushandswap.c operations/rotate.c \
-operations/reverserotate.c sort/sort.c sort/sort2.c
+operations/reverserotate.c sort/sort.c sort/sort2.c sort/sort3.c
 
 OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h
