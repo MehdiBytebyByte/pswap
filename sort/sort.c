@@ -6,26 +6,11 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 03:39:43 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 03:51:28 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	start_sort(t_stack **stacka,t_stack **stackb)
-{
-	int count;
-	
-	count = listcount(*stacka);
-	if (alreadysorted(*stacka, count))
-		return ;
-	if (count == 2)
-		two_elements(stacka);
-	else if (count == 3)
-		three_elements(stacka);
-	else
-		sortmore(stacka, stackb, count);
-};
 
 int	alreadysorted(t_stack *stack, int listcount)
 {
@@ -78,6 +63,21 @@ void	three_elements(t_stack **stacka)
 			ra(stacka);
 		}
 	}
+};
+
+void	start_sort(t_stack **stacka,t_stack **stackb)
+{
+	int count;
+	
+	count = listcount(*stacka);
+	if (alreadysorted(*stacka, count))
+		return ;
+	if (count == 2)
+		two_elements(stacka);
+	else if (count == 3)
+		three_elements(stacka);
+	else
+		sortmore(stacka, stackb, count);
 };
 
 void	sortmore(t_stack **stacka, t_stack **stackb, int count)
