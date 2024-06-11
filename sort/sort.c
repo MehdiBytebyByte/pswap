@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 01:58:53 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 03:28:56 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,13 @@ void	three_elements(t_stack **stacka)
 void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 {
 	firstpush(stacka, stackb, count);
+	printf("A\n\n\n");
+	readstack(*stacka);
+	
+	printf("B\n\n\n");
+	readstack(*stackb);
+	exit(1);
 	if (!alreadysorted(*stacka, count))
 		three_elements(stacka);
-	positionassigner(stacka, stackb);	
-	printf("Stack A\n");
-	readstack(*stacka);
-	printf("\n------------------------------------\n\n\n");
-	printf("Stack B\n");
-	readstack(*stackb);
+	positionassigner(stacka, stackb);
 }

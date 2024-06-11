@@ -1,0 +1,26 @@
+index 8, mid 4,
+index 4, mid 4,
+index 5, mid 4,
+index 1, mid 4,
+index 2, mid 4,
+index 6, mid 4,
+index 7, mid 4,
+index 3, mid 4,
+A
+
+
+Value	index	position	target
+4    	4     	0	        -1
+3    	3     	1	        -1
+120    	8     	2	        1
+1    	2     	3	        1
+0    	1     	4	        3
+
+B
+
+
+Value	index	position	target
+120    	8     	2	        1
+1    	2     	3	        1
+0    	1     	4	        3
+

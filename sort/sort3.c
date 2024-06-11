@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 02:09:21 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 03:27:57 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,49 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 	t_stack *temp;
 	
 	temp = *a;
-	i = 0;
+	i = 1;
 	mid = count / 2;
 	while (i <= mid)
 	{
 		if (temp->index <= mid)
 		{
-			printf("---\n");
 			pa(&temp, b);
 			i++;
 			count--;
-			// readstack(*a);ß
+			// printf("Stack A\n");
+			// readstack(temp);
+			// printf("\n------------------------------------\n\n\n");
+			// printf("Stack B\n");
+			// readstack(*b);
 		}
 		else
+		{
 			ra(&temp);
-			printf("***\n");
+			// printf("Stack A\n");
 			// readstack(temp);
+			// printf("\n------------------------------------\n\n\n");
+			// printf("Stack B\n");
+			// readstack(*b);
+		}
 	}
 	while (count != 3)
 	{
-		printf("+++\n");
+		// printf("last 3\n");
 		pa (&temp, b);
-		count--;	
+		count--;
+		// printf("Stack A\n");
+		// readstack(temp);
+		// printf("Stack B\n");
+		// readstack(*b);
 	}
+		// printf("\n------------------------------------\n\n\n");
+		// printf("\n------------------------------------\n\n\n");
+		// printf("\n------------------------------------\n\n\n");
+		// printf("\n------------------------------------\n\n\n");
+		// printf("\n------------------------------------\n\n\n");
+		// printf("Stack A\n");
+		// readstack(temp);
+		// printf("Stack B\n");
+		// readstack(*b);
+		// printf("\n------------------------------------\n\n\n");
 }
