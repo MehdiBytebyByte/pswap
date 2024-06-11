@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 01:17:25 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 03:38:33 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	indexing(t_stack *stack)
 
 void	getminpos(t_stack **a,t_stack **b)
 {
-	t_stack *stka;
 	int holder;
 	int posholder;
+	t_stack *stka;
 	t_stack *stkb;
 
 	stkb = *b;
@@ -66,7 +66,7 @@ void	getminpos(t_stack **a,t_stack **b)
 	while (stkb)
 	{
 		if (stkb->target_pos == -1)
-			stkb->target_pos = holder;
+			stkb->target_pos = posholder;
 		stkb = stkb->next;
 	}
 }
