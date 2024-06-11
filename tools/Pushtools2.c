@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 03:38:33 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 04:21:49 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,25 @@ void	getminpos(t_stack **a,t_stack **b)
 		if (stkb->target_pos == -1)
 			stkb->target_pos = posholder;
 		stkb = stkb->next;
+	}
+}
+
+void	b_calculator(t_stack **stackb)
+{
+	t_stack *b;
+	int mid;
+	int	i;
+
+	i = 0;
+	mid = listcount(b) / 2;
+	b = *stackb;
+	while (b)
+	{
+		if (b->pos <= mid)
+			b->cost_b = i;
+		else if (b->pos > mid)
+			b->cost_b = listcount(b) - i;
+		b = b->next;
+		i++;			
 	}
 }

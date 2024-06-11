@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 00:39:30 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/11 04:19:36 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	func(void)
 
 void	readstack(t_stack *stack)
 {
-	printf("Value\tindex\tposition\ttarget\n");
+	printf("Value\tindex\tposition\ttarget\tb_cost\n");
 	while (stack)
 	{
-		printf("%d    \t%d     \t%d\t        %d\n",stack->value, stack->index,stack->pos,stack->target_pos);
+		printf("%d    \t%d     \t%d\t        %d\t%d\n",stack->value, stack->index,stack->pos,stack->target_pos, stack->cost_b);
 		stack = stack->next;
 	}
 	printf("\n");
