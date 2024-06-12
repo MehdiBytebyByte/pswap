@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 03:57:48 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 04:18:51 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,9 @@ void	getminpos(t_stack **a,t_stack **b)
 	}
 }
 
-
+int	abs(int i)
+{
+	if (i < 0)
+		return (-i);
+	return (i);
+}

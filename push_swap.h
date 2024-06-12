@@ -6,17 +6,18 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 03:35:14 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 05:26:50 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-#include <stdio.h>
+#include <stdio.h> //TODO REMOVE THE ONES THAT YOU DON'T NEED
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <limits.h>
 
 
 typedef struct s_stack
@@ -79,4 +80,7 @@ void	getminpos(t_stack **a,t_stack **b);
 void	firstpush(t_stack **a, t_stack **b, int count);
 void	b_calculator(t_stack **stackb, t_stack **stacka);
 int		a_calculator(t_stack *stackb, t_stack **stacka);
+void	bestmove(t_stack **a, t_stack **b);
+int		abs(int i);
+void	execute(t_stack **a, t_stack **b, t_stack *tbs);
 #endif

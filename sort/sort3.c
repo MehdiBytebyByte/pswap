@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 03:57:55 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 06:21:30 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,27 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 		pa (a, b);
 		count--;
 	}
+}
+
+void	bestmove(t_stack **a, t_stack **b)
+{
+	t_stack *temp;
+	t_stack	*holder;
+	int	totalcost;
+
+	totalcost = INT_MAX;
+	temp = *b;
+	b_calculator(b, a);
+	while (temp)
+	{
+		if ((abs(temp->cost_b) + abs(temp->cost_a)) < totalcost)
+		{
+			totalcost = abs(temp->cost_b) + abs(temp->cost_a);
+			holder = temp;
+		}
+		temp = temp->next;
+	}
+	execute(a, b, holder);
 }
 
 void	b_calculator(t_stack **stackb, t_stack **stacka)
@@ -89,4 +110,31 @@ int	a_calculator(t_stack *stackb, t_stack **stacka)
 		i++;
 	}
 	return (0);
+};
+
+void	execute(t_stack **a, t_stack **b, t_stack *tbs)
+{
+	while (tbs->cost_a > 0)
+	{
+		ra(a);
+		tbs->cost_a--;
+	}
+	while (tbs->cost_a < 0)
+	{
+		tbs->cost_a++;
+		rra(a);
+	}
+	while (tbs->cost_b > 0)
+	{
+		tbs->cost_b--;
+		ra(b);
+	}
+	while (tbs->cost_b < 0)
+	{		
+		tbs->cost_b++;
+		rra(b);
+	}
+	// rb(a);
+	pa(b,a);
+	// rrb(a);
 }

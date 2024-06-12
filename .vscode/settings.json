@@ -1,5 +1,10 @@
 {
 	"files.associations": {
-		"algorithm": "c"
+		"algorithm": "c",
+		"chrono": "c",
+		"cmath": "c",
+		"complex": "c",
+		"cstdlib": "c",
+		"push_swap.h": "c"
 	}
 }
