@@ -6,33 +6,15 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 04:19:36 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 03:47:41 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	ft_error(int num,t_stack *stack)
-{
-		ft_putstrerror("ERROR\n");
-		exit(1);
-};
-
-void	func(void)
+void	func(void) //TODO delete me
 {
 	system("leaks push_swap");
-};
-
-void	readstack(t_stack *stack)
-{
-	printf("Value\tindex\tposition\ttarget\tb_cost\n");
-	while (stack)
-	{
-		printf("%d    \t%d     \t%d\t        %d\t%d\n",stack->value, stack->index,stack->pos,stack->target_pos, stack->cost_b);
-		stack = stack->next;
-	}
-	printf("\n");
 };
 
 int main(int argc, char  *argv[])

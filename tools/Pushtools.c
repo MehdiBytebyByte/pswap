@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:57:44 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:19:36 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 03:16:04 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(char *str)
 	int		s;
 	long	re;
 	long	max;
-
+//TODO fix the of issue with size_t
 	i = 0;
 	s = 1;
 	re = 0;
