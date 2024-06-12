@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 05:26:50 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/12 23:14:39 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	getminpos(t_stack **a,t_stack **b);
 void	firstpush(t_stack **a, t_stack **b, int count);
 void	b_calculator(t_stack **stackb, t_stack **stacka);
 int		a_calculator(t_stack *stackb, t_stack **stacka);
-void	bestmove(t_stack **a, t_stack **b);
+t_stack	*bestmove(t_stack **a, t_stack **b);
 int		abs(int i);
 void	execute(t_stack **a, t_stack **b, t_stack *tbs);
 #endif

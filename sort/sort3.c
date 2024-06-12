@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 06:21:30 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:16:10 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 	}
 }
 
-void	bestmove(t_stack **a, t_stack **b)
+t_stack	*bestmove(t_stack **a, t_stack **b)
 {
 	t_stack *temp;
 	t_stack	*holder;
@@ -57,7 +57,8 @@ void	bestmove(t_stack **a, t_stack **b)
 		}
 		temp = temp->next;
 	}
-	execute(a, b, holder);
+	// printf("We are sorting this -->   %d\n",holder->value);
+	return (holder);
 }
 
 void	b_calculator(t_stack **stackb, t_stack **stacka)
@@ -102,10 +103,12 @@ int	a_calculator(t_stack *stackb, t_stack **stacka)
 	while (a)
 	{
 		if (a->pos == stackb->target_pos)
+		{ 
 			if (i <= median)
 				return (i);
 			if (i > median)
 				return (i - listsize);
+		}
 		a = a->next;
 		i++;
 	}

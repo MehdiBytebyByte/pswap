@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort2.c                                            :+:      :+:    :+:   */
+/*   assigner.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 03:50:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 01:19:48 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:10:48 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	positionassigner(t_stack **stacka, t_stack **stackb)
 		temp->pos = i++;
 		temp = temp->next;
 	};
-	targetassigner(stacka, stackb);
 };
 
 int	targetfinder(t_stack **stacka,t_stack **stackb, int index)
@@ -41,7 +40,7 @@ int	targetfinder(t_stack **stacka,t_stack **stackb, int index)
 	int	position;
 	int	smallest;
 
-	smallest = listcount(*stacka) + listcount(*stackb);
+	smallest = listcount(*stacka) + listcount(*stackb) + 1;
 	a = *stacka;
 	while (a)
 	{
@@ -52,7 +51,7 @@ int	targetfinder(t_stack **stacka,t_stack **stackb, int index)
 		}
 		a = a->next;
 	}
-	if (smallest == listcount(*stacka) + listcount(*stackb))
+	if (smallest == listcount(*stacka) + listcount(*stackb) + 1)
 		return(-1);
 	return (position);
 };
@@ -70,5 +69,9 @@ void	targetassigner(t_stack **stacka, t_stack **stackb)
 		b->target_pos = targetfinder(stacka, stackb, b->index);
 		b = b->next;
 	}
+		// 	printf("A\n");
+		// readstack(*stacka);
+		// printf("B CHECK TARGET FOR -55\n");
+		// readstack(*stackb);
 	getminpos(stacka, stackb);
 };

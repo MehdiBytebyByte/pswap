@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 06:31:53 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:15:43 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,28 @@ void	start_sort(t_stack **stacka,t_stack **stackb)
 
 void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 {
-	firstpush(stacka, stackb, count);
+	t_stack *temp;
 	
+	firstpush(stacka, stackb, count);
 	if (!alreadysorted(*stacka, listcount(*stacka)))
 		three_elements(stacka);
+	
+	// printf("\nBefore swapping\n");
+	// printf("A\n");
+	// readstack(*stacka);
+	// printf("B\n");
+	// readstack(*stackb);
+	// printf("\n-----------------------\n");
 	while ((*stackb))
 	{
 		positionassigner(stacka, stackb);
-		bestmove(stacka, stackb);
+		targetassigner(stacka, stackb);
+		temp = bestmove(stacka, stackb);
 		// printf("A\n");
 		// readstack(*stacka);
 		// printf("B\n");
 		// readstack(*stackb);
+		execute(stacka, stackb, temp);
 		// printf("\n-----------------------\n");
 	}
 	while ((*stacka)->index != 1)
@@ -101,11 +111,12 @@ void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 		ra(stacka);
 	}
 	
-	// printf("A\n");
-	// readstack(*stacka);
-	// printf("B\n");
-	// readstack(*stackb);
-	// printf("\n-----------------------\n");
-	// exit(1);
+	printf("_______________FINAL_______________\n");
+	printf("A\n");
+	readstack(*stacka);
+	printf("B\n");
+	readstack(*stackb);
+	printf("\n-----------------------\n");
+	exit(1);
 
 }
