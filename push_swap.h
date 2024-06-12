@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 23:14:39 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:41:48 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ t_stack	*stackbuild(char **argv, t_stack *stack);
 void	pa(t_stack **source,t_stack **destination);
 void	pb(t_stack **source,t_stack **destination);
 void	ss(t_stack **stack, t_stack **stack2);
-void	sa(t_stack **stack);
-void	sb(t_stack **stack);
+void	sa(t_stack **stack, int i);
+void	sb(t_stack **stack, int i);
 void	rr(t_stack **stack, t_stack **stack2);
-void	ra(t_stack **stack);
-void	rb(t_stack **stack);
+void	ra(t_stack **stack, int i);
+void	rb(t_stack **stack, int i);
 void	rrr(t_stack **stack, t_stack **stack2);
-void 	rra(t_stack **stack);
-void 	rrb (t_stack **stack);
+void 	rra(t_stack **stack, int i);
+void 	rrb (t_stack **stack, int i);
 //
 void	two_elements(t_stack **stack);
 void	three_elements(t_stack **stacka);

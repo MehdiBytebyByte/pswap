@@ -6,13 +6,13 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 00:22:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/11 01:21:00 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:42:41 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sa(t_stack **stack)
+void sa(t_stack **stack, int i)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -25,9 +25,13 @@ void sa(t_stack **stack)
 	first->next = second->next;
     second->next = first;
     *stack = second;
+	if (i == 1)
+	{
+		ft_putstr("sa\n");
+	}
 };
 
-void sb(t_stack **stack)
+void sb(t_stack **stack, int i)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -40,12 +44,17 @@ void sb(t_stack **stack)
 	first->next = second->next;
     second->next = first;
     *stack = second;
+	if (i == 1)
+	{
+		ft_putstr("sb\n");
+	}
 };
 
 void	ss(t_stack **stack, t_stack **stack2)
 {
-	sa(stack);
-	sb(stack2);
+	ft_putstr("ss\n");
+	sa(stack, 0);
+	sb(stack2, 0);
 };
 
 void pa(t_stack **source, t_stack **destination)
@@ -60,6 +69,7 @@ void pa(t_stack **source, t_stack **destination)
     *source = (*source)->next;
     temp->next = *destination;
     *destination = temp;
+	ft_putstr("pa\n");
 };
 
 void pb(t_stack **source, t_stack **destination)
@@ -74,5 +84,6 @@ void pb(t_stack **source, t_stack **destination)
     *source = (*source)->next;
     temp->next = *destination;
     *destination = temp;
+	ft_putstr("pb\n");
 };
 

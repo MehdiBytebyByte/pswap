@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 00:16:10 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:36:55 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 			count--;
 		}
 		else
-			ra(&(*a));//TODO Check later
+			ra(&(*a), 1);   //TODO Check later
 	}
 	while (count != 3)
 	{
@@ -57,7 +57,6 @@ t_stack	*bestmove(t_stack **a, t_stack **b)
 		}
 		temp = temp->next;
 	}
-	// printf("We are sorting this -->   %d\n",holder->value);
 	return (holder);
 }
 
@@ -119,25 +118,23 @@ void	execute(t_stack **a, t_stack **b, t_stack *tbs)
 {
 	while (tbs->cost_a > 0)
 	{
-		ra(a);
+		ra(a,1);
 		tbs->cost_a--;
 	}
 	while (tbs->cost_a < 0)
 	{
 		tbs->cost_a++;
-		rra(a);
+		rra(a,1);
 	}
 	while (tbs->cost_b > 0)
 	{
 		tbs->cost_b--;
-		ra(b);
+		rb(b,1);
 	}
 	while (tbs->cost_b < 0)
 	{		
 		tbs->cost_b++;
-		rra(b);
+		rrb(b,1);
 	}
-	// rb(a);
 	pa(b,a);
-	// rrb(a);
 }
