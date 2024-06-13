@@ -6,16 +6,16 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 20:18:19 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:37:18 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -47,9 +47,8 @@ void	check_for_duplicates(t_stack	*head);
 int		emptystringcheck(char **argv);
 t_stack	*new_element(int value);
 int		listcount(t_stack *stack);
-void 	free_stack(t_stack *stack);
+void	free_stack(t_stack *stack);
 void	pushback(t_stack **stack, t_stack *new_element);
-void	readstack(t_stack *stack);
 t_stack	*stackbuild(char **argv, t_stack *stack);
 void	pa(t_stack **source, t_stack **destination);
 void	pb(t_stack **source, t_stack **destination);
