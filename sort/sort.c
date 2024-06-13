@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 00:46:24 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:25:37 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,11 @@ void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 		ra(stacka, 1);
 	}
 	
-	printf("_______________FINAL_______________\n");
-	printf("A\n");
-	readstack(*stacka);
-	printf("B\n");
-	readstack(*stackb);
-	printf("\n-----------------------\n");
+	// printf("_______________FINAL_______________\n");
+	// printf("A\n");
+	// readstack(*stacka);
+	// printf("B\n");
+	// readstack(*stackb);
+	// printf("\n-----------------------\n");
 
 }

@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:28:14 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 00:32:56 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:42:39 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void rb(t_stack **stack, int i)
 	*stack = first->next;
 	first->next = NULL;
 	if (i == 1)
-		ft_putstr("ra\n");
+		ft_putstr("rb\n");
 };
 
 void	rr(t_stack **stack, t_stack **stack2)

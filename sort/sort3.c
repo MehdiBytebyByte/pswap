@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 00:36:55 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:37:14 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 	{
 		if ((*a)->index <= mid)
 		{
-			pa(a, b);
+			pb(a, b);
 			i++;
 			count--;
 		}
 		else
-			ra(&(*a), 1);   //TODO Check later
+			ra(a, 1);
 	}
 	while (count != 3)
 	{
-		pa (a, b);
+		pb (a, b);
 		count--;
 	}
 }
@@ -116,6 +116,19 @@ int	a_calculator(t_stack *stackb, t_stack **stacka)
 
 void	execute(t_stack **a, t_stack **b, t_stack *tbs)
 {
+	while (tbs->cost_a > 0 && tbs->cost_b > 0)
+	{
+		rr(a,b);
+		tbs->cost_a--;
+		tbs->cost_b--;	
+	}
+	while (tbs->cost_a < 0 && tbs->cost_b < 0)
+	{
+		rrr(a,b);
+		tbs->cost_a++;	
+		tbs->cost_b++;	
+	}
+	
 	while (tbs->cost_a > 0)
 	{
 		ra(a,1);
