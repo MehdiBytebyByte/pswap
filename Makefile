@@ -1,5 +1,5 @@
 CC =  cc
-# CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
 SRCS = Pushswap.c \
 tools/Pushtools.c tools/Pushtools2.c tools/Pushtools3.c tools/split.c \
@@ -13,8 +13,7 @@ all: $(NAME)
 do:	$(NAME)
 	rm -f $(OBJS)
 %.o: %.c $(HEADER)
-	$(CC) -c $< -o $@
-# hadi kant fo9 had ster -Wall -Wextra -Werror 
+	$(CC) -c $< -o $@ -Wall -Wextra -Werror 
 $(NAME): $(OBJS)
 	$(CC)  $(CFLAGS) $(OBJS) -o $(NAME)
 # -fsanitize=address

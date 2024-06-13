@@ -6,17 +6,17 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:28:14 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 02:42:39 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:42:24 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ra(t_stack **stack, int i)
+void	ra(t_stack **stack, int i)
 {
 	t_stack	*last;
 	t_stack	*first;
-	
+
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	first = *stack;
@@ -28,13 +28,13 @@ void ra(t_stack **stack, int i)
 	first->next = NULL;
 	if (i == 1)
 		ft_putstr("ra\n");
-};
+}
 
-void rb(t_stack **stack, int i)
+void	rb(t_stack **stack, int i)
 {
 	t_stack	*last;
 	t_stack	*first;
-	
+
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	first = *stack;
@@ -46,13 +46,11 @@ void rb(t_stack **stack, int i)
 	first->next = NULL;
 	if (i == 1)
 		ft_putstr("rb\n");
-};
+}
 
 void	rr(t_stack **stack, t_stack **stack2)
 {
 	ft_putstr("rr\n");
 	ra(stack, 0);
 	rb(stack2, 0);
-};
-
-
+}

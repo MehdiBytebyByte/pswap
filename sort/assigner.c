@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 03:50:06 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 00:10:48 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:26:50 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,30 @@
 
 void	positionassigner(t_stack **stacka, t_stack **stackb)
 {
-	int i;
+	int		i;
+	t_stack	*temp;
 
 	i = 0;
-	t_stack *temp;
-
 	temp = *stackb;
 	while (temp)
 	{
 		temp->pos = i++;
 		temp = temp->next;
-	};
+	}
 	i = 0;
 	temp = *stacka;
 	while (temp)
 	{
 		temp->pos = i++;
 		temp = temp->next;
-	};
-};
+	}
+}
 
-int	targetfinder(t_stack **stacka,t_stack **stackb, int index)
+int	targetfinder(t_stack **stacka, t_stack **stackb, int index)
 {
-	t_stack *a;
-	int	position;
-	int	smallest;
+	t_stack	*a;
+	int		position;
+	int		smallest;
 
 	smallest = listcount(*stacka) + listcount(*stackb) + 1;
 	a = *stacka;
@@ -52,16 +51,13 @@ int	targetfinder(t_stack **stacka,t_stack **stackb, int index)
 		a = a->next;
 	}
 	if (smallest == listcount(*stacka) + listcount(*stackb) + 1)
-		return(-1);
+		return (-1);
 	return (position);
-};
+}
 
 void	targetassigner(t_stack **stacka, t_stack **stackb)
 {
-	t_stack *b;
-	t_stack *a;
-	int holder;
-	int difference;
+	t_stack	*b;
 
 	b = *stackb;
 	while (b)
@@ -69,9 +65,5 @@ void	targetassigner(t_stack **stacka, t_stack **stackb)
 		b->target_pos = targetfinder(stacka, stackb, b->index);
 		b = b->next;
 	}
-		// 	printf("A\n");
-		// readstack(*stacka);
-		// printf("B CHECK TARGET FOR -55\n");
-		// readstack(*stackb);
 	getminpos(stacka, stackb);
-};
+}

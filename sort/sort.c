@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 04:03:36 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:31:53 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	alreadysorted(t_stack *stack, int listcount)
 {
 	t_stack	*temp;
-	int			i;
-	
+	int		i;
+
 	i = 1;
-	temp =  stack;
+	temp = stack;
 	while (temp->next)
 	{
 		if (temp->index < temp->next->index)
@@ -28,13 +28,13 @@ int	alreadysorted(t_stack *stack, int listcount)
 	if (i == listcount)
 		return (1);
 	return (0);
-};
+}
 
 void	two_elements(t_stack **stack)
 {
 	if ((*stack)->index > (*stack)->next->index)
 		sa(stack, 1);
-};
+}
 
 void	three_elements(t_stack **stacka)
 {
@@ -51,7 +51,7 @@ void	three_elements(t_stack **stacka)
 			rra(stacka, 1);
 		}
 		else if ((*stacka)->next->index < third->index)
-			ra(stacka , 1);
+			ra(stacka, 1);
 	}
 	else
 	{
@@ -59,16 +59,16 @@ void	three_elements(t_stack **stacka)
 			rra(stacka, 1);
 		else
 		{
-			sa(stacka, 1); //TODO add here too
+			sa(stacka, 1);
 			ra(stacka, 1);
 		}
 	}
-};
+}
 
-void	start_sort(t_stack **stacka,t_stack **stackb)
+void	start_sort(t_stack **stacka, t_stack **stackb)
 {
-	int count;
-	
+	int	count;
+
 	count = listcount(*stacka);
 	if (alreadysorted(*stacka, count))
 		return ;
@@ -78,12 +78,12 @@ void	start_sort(t_stack **stacka,t_stack **stackb)
 		three_elements(stacka);
 	else
 		sortmore(stacka, stackb, count);
-};
+}
 
 void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 {
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	firstpush(stacka, stackb, count);
 	if (!alreadysorted(*stacka, listcount(*stacka)))
 		three_elements(stacka);
@@ -94,24 +94,6 @@ void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 		temp = bestmove(stacka, stackb);
 		execute(stacka, stackb, temp);
 	}
-	while ((*stacka)->index != 1 )
-	{
+	while ((*stacka)->index != 1)
 		rra(stacka, 1);
-	}
-	// while ((*stacka)->index != 1 && (*stacka)->index <= listcount((*stacka)))
-	// {
-	// 	rra(stacka, 1);
-	// }
-	// while ((*stacka)->index != 1 && (*stacka)->index > listcount((*stacka)))
-	// {
-	// 	ra(stacka, 1);
-	// }
-
-	// printf("_______________FINAL_______________\n");
-	// printf("A\n");
-	// readstack(*stacka);
-	// printf("B\n");
-	// readstack(*stackb);
-	// printf("\n-----------------------\n");
-
 }

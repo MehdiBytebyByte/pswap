@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:57:44 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 02:21:43 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:01:34 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	ft_atoi(char *str)
 		re = re * 10 +(str[i] - 48);
 		i++;
 	}
-		if(re > INT_MAX)
-		{
-			ft_putstr("ERROR\n");
-			exit(1);
-		}
+	if (re > INT_MAX) //FIXME issue here
+	{
+		ft_putstr("ERROR\n");
+		exit(1);
+	}
 	return (re * s);
 }
 
@@ -60,7 +60,7 @@ size_t	ft_strlen(char *s)
 		i++;
 	}
 	return (i);
-};
+}
 
 void	ft_putstr(char *s)
 {
@@ -74,7 +74,7 @@ void	ft_putstr(char *s)
 		write (1, &s[i], 1);
 		i++;
 	}
-};
+}
 
 void	ft_putstrerror(char *s)
 {
@@ -88,4 +88,4 @@ void	ft_putstrerror(char *s)
 		write (2, &s[i], 1);
 		i++;
 	}
-};
+}

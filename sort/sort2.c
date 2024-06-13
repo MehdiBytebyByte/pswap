@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:22:36 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 03:47:47 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:55:23 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	firstpush(t_stack **a, t_stack **b, int count)
 {
-	int mid; 
-	int	i;
-	t_stack *temp;
-	
+	int		mid;
+	int		i;
+	t_stack	*temp;
+
 	temp = *a;
 	i = 1;
 	mid = count / 2;
@@ -41,9 +41,9 @@ void	firstpush(t_stack **a, t_stack **b, int count)
 
 t_stack	*bestmove(t_stack **a, t_stack **b)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	t_stack	*holder;
-	int	totalcost;
+	int		totalcost;
 
 	totalcost = INT_MAX;
 	temp = *b;
@@ -62,10 +62,10 @@ t_stack	*bestmove(t_stack **a, t_stack **b)
 
 void	b_calculator(t_stack **stackb, t_stack **stacka)
 {
-	t_stack *b;
-	int mid;
-	int	i;
-	int	listsize;
+	t_stack	*b;
+	int		mid;
+	int		i;
+	int		listsize;
 
 	b = *stackb;
 	listsize = listcount(*stackb);
@@ -90,10 +90,10 @@ void	b_calculator(t_stack **stackb, t_stack **stacka)
 
 int	a_calculator(t_stack *stackb, t_stack **stacka)
 {
-	t_stack *a;
-	int listsize;
-	int median;
-	int i;
+	t_stack	*a;
+	int		listsize;
+	int		median;
+	int		i;
 
 	listsize = listcount(*stacka);
 	median = listcount(*stacka) / 2;
@@ -102,7 +102,7 @@ int	a_calculator(t_stack *stackb, t_stack **stacka)
 	while (a)
 	{
 		if (a->pos == stackb->target_pos)
-		{ 
+		{
 			if (i <= median)
 				return (i);
 			if (i > median)
@@ -112,42 +112,4 @@ int	a_calculator(t_stack *stackb, t_stack **stacka)
 		i++;
 	}
 	return (0);
-};
-
-void	execute(t_stack **a, t_stack **b, t_stack *tbs)
-{
-	while (tbs->cost_a > 0 && tbs->cost_b > 0)
-	{
-		rr(a,b);
-		tbs->cost_a--;
-		tbs->cost_b--;	
-	}
-	while (tbs->cost_a < 0 && tbs->cost_b < 0)
-	{
-		rrr(a,b);
-		tbs->cost_a++;	
-		tbs->cost_b++;	
-	}
-	
-	while (tbs->cost_a > 0)
-	{
-		ra(a,1);
-		tbs->cost_a--;
-	}
-	while (tbs->cost_a < 0)
-	{
-		tbs->cost_a++;
-		rra(a,1);
-	}
-	while (tbs->cost_b > 0)
-	{
-		tbs->cost_b--;
-		rb(b,1);
-	}
-	while (tbs->cost_b < 0)
-	{		
-		tbs->cost_b++;
-		rrb(b,1);
-	}
-	pa(b,a);
 }

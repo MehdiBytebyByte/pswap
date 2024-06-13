@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 04:50:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/08 04:50:55 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:33:31 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	freemem(char **splited, int r)
 		i++;
 	}
 }
+
 char	**allocater(char *str, char c, int nsubs, char **splited)
 {
 	int	x;
@@ -111,4 +112,4 @@ char	**ft_split(char *s, char c)
 		return (NULL);
 	splited[nsubs] = NULL;
 	return (splited);
-};
+}

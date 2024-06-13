@@ -6,30 +6,30 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:32:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/12 04:18:51 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:35:14 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-    t_stack *temp;
-    while (stack)
-    {
-        temp = stack;
-        stack = stack->next;
-        free(temp);
-    }
-};
+	t_stack	*temp;
+
+	while (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}
 
 void	indexing(t_stack *stack)
 {
-	t_stack *i;
-	t_stack *j;
-	
-	i = stack;
+	t_stack	*i;
+	t_stack	*j;
 
+	i = stack;
 	while (i != NULL)
 	{
 		j = stack;
@@ -41,15 +41,15 @@ void	indexing(t_stack *stack)
 			j = j->next;
 		}
 		i = i->next;
-	};
-};
+	}
+}
 
-void	getminpos(t_stack **a,t_stack **b)
+void	getminpos(t_stack **a, t_stack **b)
 {
-	int holder;
-	int posholder;
-	t_stack *stka;
-	t_stack *stkb;
+	int		holder;
+	int		posholder;
+	t_stack	*stka;
+	t_stack	*stkb;
 
 	stkb = *b;
 	stka = *a;
@@ -57,12 +57,12 @@ void	getminpos(t_stack **a,t_stack **b)
 	while (stka)
 	{
 		if (holder > stka->index)
-			{
-				holder = stka->index;
-				posholder = stka->pos;
-			}
+		{
+			holder = stka->index;
+			posholder = stka->pos;
+		}
 		stka = stka->next;
-	};
+	}
 	while (stkb)
 	{
 		if (stkb->target_pos == -1)

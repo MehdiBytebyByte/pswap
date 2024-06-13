@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/09 01:20:36 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:32:44 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void	pushback(t_stack **stack, t_stack *new_element)
 {
-    t_stack *current;
+	t_stack	*current;
 
-    if (!new_element)
-        return ;
-    if (*stack == NULL)
-        *stack = new_element;
-    else
-    {
-        current = *stack;
-        while (current->next != NULL)
-            current = current->next;
-        current->next = new_element;
-    }
-};
+	if (!new_element)
+		return ;
+	if (*stack == NULL)
+		*stack = new_element;
+	else
+	{
+		current = *stack;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new_element;
+	}
+}
 
 int	listcount(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack)
@@ -40,19 +40,19 @@ int	listcount(t_stack *stack)
 		stack = stack->next;
 	}
 	return (i);
-};
+}
 
 t_stack	*stackbuild(char **argv, t_stack *stack)
 {
-	int	i;
-	int	j;
-	char **temp;
-	t_stack *new;
-	
+	int		i;
+	int		j;
+	char	**temp;
+	t_stack	*new;
+
 	i = 1;
 	while (argv[i])
 	{
-		temp = ft_split(argv[i],' ');
+		temp = ft_split(argv[i], ' ');
 		j = 0;
 		while (temp[j])
 		{
@@ -60,13 +60,13 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 			pushback(&stack, new);
 			j++;
 		}
-	while (j >= 0)
+		while (j >= 0)
 			free(temp[j--]);
 		free(temp);
 		i++;
 	}
 	return (stack);
-};
+}
 
 t_stack	*new_element(int value)
 {
@@ -74,7 +74,7 @@ t_stack	*new_element(int value)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
-		ft_error(5,new);
+		ft_error(5, new);
 	new->value = value;
 	new->index = -1;
 	new->pos = -1;
@@ -83,4 +83,4 @@ t_stack	*new_element(int value)
 	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
-};
+}
