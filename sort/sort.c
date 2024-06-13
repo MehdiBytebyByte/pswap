@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 02:25:37 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/13 04:03:36 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,19 @@ void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 		temp = bestmove(stacka, stackb);
 		execute(stacka, stackb, temp);
 	}
-	while ((*stacka)->index != 1)
+	while ((*stacka)->index != 1 )
 	{
-		ra(stacka, 1);
+		rra(stacka, 1);
 	}
-	
+	// while ((*stacka)->index != 1 && (*stacka)->index <= listcount((*stacka)))
+	// {
+	// 	rra(stacka, 1);
+	// }
+	// while ((*stacka)->index != 1 && (*stacka)->index > listcount((*stacka)))
+	// {
+	// 	ra(stacka, 1);
+	// }
+
 	// printf("_______________FINAL_______________\n");
 	// printf("A\n");
 	// readstack(*stacka);
