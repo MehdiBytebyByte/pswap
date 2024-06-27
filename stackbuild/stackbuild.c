@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 23:08:05 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/27 01:46:29 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 	while (argv[i])
 	{
 		temp = ft_split(argv[i], ' ');
+		if (!temp)
+			ft_error(stack);
 		j = 0;
 		while (temp[j])
 		{
