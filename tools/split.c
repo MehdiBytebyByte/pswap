@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 04:50:22 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/27 01:45:50 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/27 01:46:53 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,5 @@ char	**ft_split(char *s, char c)
 	if (splited == NULL)
 		return (NULL);
 	splited[nsubs] = NULL;
-	return (NULL);
+	return (splited);
 }
