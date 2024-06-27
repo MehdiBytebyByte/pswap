@@ -1,5 +1,3 @@
-CC =  cc
-CFLAGS = -Wall -Werror -Wextra -g3
 NAME = push_swap
 SRCS = Pushswap.c \
 tools/Pushtools.c tools/Pushtools2.c tools/Pushtools3.c tools/split.c \
@@ -11,9 +9,9 @@ OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h
 all: $(NAME)
 %.o: %.c $(HEADER)
-	$(CC) -g3 -c $< -o $@ -Wall -Wextra -Werror
+	cc -c $< -o $@ -Wall -Wextra -Werror
 $(NAME): $(OBJS)
-	$(CC)  $(CFLAGS) $(OBJS) -fsanitize=address -o $(NAME)
+	cc  -Wall -Wextra -Werror $(OBJS) -o $(NAME)
 clean:
 	rm -f $(OBJS)
 fclean: clean
