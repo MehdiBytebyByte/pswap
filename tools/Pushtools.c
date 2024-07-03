@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:57:44 by mboughra          #+#    #+#             */
-/*   Updated: 2024/07/03 01:33:10 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/07/03 02:24:54 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(char *str, t_stack *stack)
 	{
 		re = re * 10 +(str[i] - 48);
 		if (re < INT_MIN || re > INT_MAX)
-			break;
+			break ;
 		i++;
 	}
 	re = re * s;
