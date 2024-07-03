@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:31:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/28 00:34:05 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/07/03 08:29:19 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check(char **argv)
 {
-	if (!numcheck(argv) || !signcheck(argv) || !onlysigncheck(argv)
-		|| !emptystringcheck(argv))
+	if (!nullcheck(argv) || !numcheck(argv) || !signcheck(argv)
+		|| !onlysigncheck(argv) || !emptystringcheck(argv))
 		return (-1);
 	return (0);
 }
@@ -28,11 +28,6 @@ int	main(int argc, char	**argv)
 	stacka = NULL;
 	if (argc == 1)
 		return (0);
-	if (argc == 2 && argv[1][0] == '\0')
-	{
-		ft_putstrerror("Error");
-		exit (1);
-	}
 	if (check(argv) == -1)
 		ft_error(stacka);
 	stacka = stackbuild(argv, stacka);

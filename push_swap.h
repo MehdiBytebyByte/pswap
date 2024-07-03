@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/07/03 01:58:49 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/07/03 08:05:14 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ t_stack	*bestmove(t_stack **a, t_stack **b);
 int		abs(int i);
 void	execute(t_stack **a, t_stack **b, t_stack *tbs);
 void	execute2(t_stack **a, t_stack **b, t_stack *tbs);
+int		nullcheck(char **argv);
 #endif
