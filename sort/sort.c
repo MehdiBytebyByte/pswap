@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 05:25:10 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 20:31:53 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/07/03 01:48:46 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,11 @@ void	sortmore(t_stack **stacka, t_stack **stackb, int count)
 		execute(stacka, stackb, temp);
 	}
 	while ((*stacka)->index != 1)
-		rra(stacka, 1);
+	{
+		if (((*stacka)->index) > listcount(*stacka) / 2)
+			ra(stacka, 1);
+		else
+			rra(stacka, 1);
+		
+	}
 }

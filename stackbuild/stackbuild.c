@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 00:01:41 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/27 01:46:29 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/06/29 02:21:06 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 		j = 0;
 		while (temp[j])
 		{
-			new = new_element(ft_atoi(temp[j], stack));
+			new = new_element(ft_atoi(temp[j], stack), stack, temp, j);
 			pushback(&stack, new);
 			j++;
 		}
@@ -70,13 +70,18 @@ t_stack	*stackbuild(char **argv, t_stack *stack)
 	return (stack);
 }
 
-t_stack	*new_element(int value)
+t_stack	*new_element(int value, t_stack *stack, char **str, int j)
 {
 	t_stack	*new;
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
-		ft_error(new);
+	{
+		while (j >= 0)
+			free(str[j--]);
+		free(str);
+		ft_error(stack);
+	}
 	new->value = value;
 	new->index = -1;
 	new->pos = -1;

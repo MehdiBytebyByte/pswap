@@ -6,7 +6,7 @@
 /*   By: mboughra <mboughra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:32:16 by mboughra          #+#    #+#             */
-/*   Updated: 2024/06/13 23:08:16 by mboughra         ###   ########.fr       */
+/*   Updated: 2024/07/03 01:24:21 by mboughra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdio.h> //TODO DELETE
 
 typedef struct s_stack
 {
@@ -44,7 +45,7 @@ int		signcheck(char **argv);
 int		numcheck(char **argv);
 void	check_for_duplicates(t_stack	*head);
 int		emptystringcheck(char **argv);
-t_stack	*new_element(int value);
+t_stack	*new_element(int value, t_stack *stack, char **str, int j);
 int		listcount(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	pushback(t_stack **stack, t_stack *new_element);
